@@ -100,8 +100,8 @@ function Number(){
 
 pay2.onchange=Number;
 
-let D_price;
-let D_name;
+let d_price;
+let d_name;
 let zankin2
 
 let output2=document.getElementById("output2")
@@ -109,22 +109,22 @@ let output2=document.getElementById("output2")
 function purchase(){
 	const Num = pay2.value;
 	
-	if(buyable_drink[0].checkde){
-		D_price=150;
-		D_name="コーヒー";
+	if(buyable_drink[0].checked){
+		d_price=150;
+		d_name="コーヒー";
 	}else if(buyable_drink[1].checked){
-		D_price=130;
-		D_name="お茶";
+		d_price=130;
+		d_name="お茶";
 	}else if(buyable_drink[2].checked){
-		D_price=160;
-		D_name="オレンジジュース";
+		d_price=160;
+		d_name="オレンジジュース";
 	}else if(buyable_drink[3].checked){
-		D_price=100;
-		D_name="水";
+		d_price=100;
+		d_name="水";
 	}
 	
-	zankin2=Num-D_price;
-	output2.innerHTML=D_name+"を購入しました。"+"<br>"+"おつりは"+zankin2+"です。";
+	zankin2=Num-d_price;
+	output2.innerHTML=d_name+"を購入しました。"+"<br>"+"おつりは"+zankin2+"です。";
 		
 }
 
