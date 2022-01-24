@@ -38,7 +38,6 @@ $(function(){
 		});
 })
 
-const images=["img/Curry.jpg","img/Doncic.jpg","img/Giannis.jpg","img/Harden.jpg","img/Lebron.jpg"];
 
 $(function(){
 	$("#slide ul li").hide();
