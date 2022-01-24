@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+	
+<head>
+	<meta charset="utf-8">
+	<title>第5回課題</title>
+</head>
+	
+<body>
+	
+	<div class="kadai">
+		<h1>課題１</h1>
+	</div>
+	
+	<div class="kadai">
+		<h1>課題２</h1>
+	</div>
+	
+	<div>
+		<h1>課題３</h1>
+		
+		<form>
+			<span>お金を入れる</span>
+			
+			<input type="text" id="pay">
+			
+			<select id="menu">
+				<option value="coffee">コーヒー(150円)</option>
+				<option value="green-tea">お茶(130円)</option>
+				<option value="orange">オレンジジュース(160円)</option>
+				<option value="water">水(100円)</option>
+			</select>
+		
+			<input type="button" value="購入" id="buy">
+		
+		</form>
+		
+		<p id="output"></p>
+			
+	</div>
+	
+	<div>
+		<h1>発展</h1>
+		
+		<form>
+			<span>お金を入れる</span>
+			
+			<input type="number" id="pay2" value="0"><br>
+			
+			<div id="buyable_drink">
+				<label><input type="radio" name="drink" value="coffee" disabled>コーヒー(\150)</label>
+				<label><input type="radio" name="drink" value="green-tea" disabled>お茶(\130)</label>
+				<label><input type="radio" name="drink" value="orange" disabled>オレンジジュース(\160)</label>
+				<label><input type="radio" name="drink" value="water" disabled>水(\100)</label>
+			</div>
+			
+			<input type="button" value="購入" id="purchase">
+			
+		</form>
+		
+		<p id="output2"></p>
+		
+	</div>
+	
+	<script src="./test.js"></script>
+	
+</body>
