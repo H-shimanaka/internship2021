@@ -1,10 +1,7 @@
 package jp.co.aforce.h.shimanaka.human;
 
 //「人間」のインターフェイス
-public interface Human {
-	
-	//誕生日をString型で"yyyy/MM/dd"の形式で取得するセッタ
-	public void setBirth(String birthday);
+public interface Human_interface {
 	
 	//「挨拶」のメソッド
 	public void greeting();

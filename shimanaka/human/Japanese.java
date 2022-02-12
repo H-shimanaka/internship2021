@@ -2,19 +2,14 @@ package jp.co.aforce.h.shimanaka.human;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 //「日本人」クラス
-public class Japanese implements Human {
-	
-	private String name;	 //名前データ
-	private String birthday; //誕生日データ
-	
+public class Japanese extends Human_abstract implements Human_interface {
 	
 	//String型の引数から名前を設定するデフォルトコンストラクタ
 	public Japanese(String name){
-		this.name = name;
+		super(name);
 	}
 	
 	
@@ -40,33 +35,14 @@ public class Japanese implements Human {
 		//誕生日を解析する際の例外処理
 		try{
 			//取得した誕生日をDate型に解析
-			//その後カレンダークラスを使って日付を取得
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 			Date Birth = sdf.parse(this.birthday);
 			
-			Calendar calendarBirth = Calendar.getInstance();
-			calendarBirth.setTime(Birth);
+			//現在の日時をミリ秒で取得
+			//(現在日のミリ秒-誕生日のミリ秒) / 1年のミリ秒 で年齢を取得
+			long now = System.currentTimeMillis();
 			
-			
-			//現在日の日付を取得
-			Calendar calendarNow = Calendar.getInstance();
-			calendarNow.getTime();
-	        
-			
-	        //(現在日の年度)-(誕生日の年度)で年齢を計算
-	        int age = calendarNow.get(Calendar.YEAR) - calendarBirth.get(Calendar.YEAR);
-	        
-	        //(現在日の月数)<(誕生日の月数)なら年齢から1を引く
-	        if (calendarNow.get(Calendar.MONTH) < calendarBirth.get(Calendar.MONTH)) {
-	            age--;
-	        
-	        //(現在日の日数)<(誕生日の日数)なら年齢から1を引く
-	        }else if (calendarNow.get(Calendar.MONTH) == calendarBirth.get(Calendar.MONTH)) {
-	            
-	            if (calendarNow.get(Calendar.DATE) < calendarBirth.get(Calendar.DATE)) {
-	                age--;
-	            }
-	        }
+			long age = (now - Birth.getTime())/86400000/365;
 	        
 	        //取得した年齢を表示
 	        System.out.println(age + "歳です。");
