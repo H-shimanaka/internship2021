@@ -42,7 +42,7 @@ public class UsersDao {
 		String sql = "INSERT INTO users\n"
 					+"(user_id, password, user_name, age, created_user, updated_user)\n"
 					+"VALUES\n"
-					+"(?, ?, ?, ?, ?, ?)";
+					+"(?, ?, ?, ?, ?, ?);";
 		
 		try(Connection con = DBUtil.openConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)) {
@@ -59,7 +59,6 @@ public class UsersDao {
 			try(ResultSet rs = pstmt.executeQuery();){
 				
 			}catch(SQLException e) {
-				con.rollback();
 				System.out.println("SQLの実行に失敗しました");
 				e.printStackTrace();
 			}

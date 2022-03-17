@@ -13,22 +13,22 @@
 		<table>
 			<tr>
 				<td>ID</td>
-				<td><input type="text" name="id" required></td>
+				<td><input type="text" name="id" pattern="[0-9A-Za-z]{1,50}" title="半角英数字で５０桁までの入力が可能です" required></td>
 			</tr>
 			
 			<tr>
 				<td>Password</td>
-				<td><input type="password" name="password" required></td>
+				<td><input type="password" name="password" pattern="[0-9A-Za-z]{1,100}" title="半角英数字で１００桁までの入力が可能です" required></td>
 			</tr>
 			
 			<tr>
 				<td>User Name</td>
-				<td><input type="text" name="userName"></td>
+				<td><input type="text" name="userName" pattern="{0,100}" title="１００桁まで入力可能です"></td>
 			</tr>
 			
 			<tr>
 				<td>Age</td>
-				<td><input type="text" name="age"></td>
+				<td><input type="text" name="age" pattern="[0-9]{0,3}" title="半角数字で３桁まで入力可能です"></td>
 			</tr>
 			
 			<tr>

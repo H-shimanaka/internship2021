@@ -39,10 +39,23 @@ public class RegistrationController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//httpリクエストの文字コードを指定
+		request.setCharacterEncoding("UTF-8");
+		
+		//formからid,password,userNameの値を文字としてそのまま取得
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
 		String userName = request.getParameter("userName");
-		int age = Integer.parseInt(request.getParameter("age"));
+
+		//年齢だけは入力されていなかった場合、0を代入
+		//入力されていた場合、int型に変更する
+		int age;
+		if(request.getParameter("age") == "") {
+			age = 0;
+		}else {
+			age = Integer.parseInt(request.getParameter("age"));
+		}
+		
 		
 		RegistrationModel model = new RegistrationModel();
 		int insert = model.registerNewUserData(id, password, userName, age);
